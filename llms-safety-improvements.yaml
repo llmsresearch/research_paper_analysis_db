@@ -8,7 +8,7 @@ papers:
                training specific control models. LLMSafeGuard also employs a context-wise timing selection strategy, intervening LLMs only when necessary."
     tags: ["attack", "jailbreak", "framework"]
     url: "http://arxiv.org/abs/2404.19048v1"
-    image: ["https://github.com/llmsresearch/research_paper_analysis_db/images/29th-april-2024/llmsafeguard.png"]
+    image: ["https://raw.githubusercontent.com/llmsresearch/research_paper_analysis_db/main/images/29th-april-2024/llmsafeguard.png"]
   - date: "30th April, 2024"
     title: "Enhancing Trust in LLM-Generated Code Summaries with Calibrated Confidence Scores"
     description: "Considers summarization as a calibration problem and provides a predictions of the likelihood of similarity to human values"
@@ -29,4 +29,4 @@ papers:
     tags: ["attack"]
     url: "http://arxiv.org/abs/2404.19597v1"
     details: "The research paper addresses the issue of backdoor attacks on English-centric LLMs and how they can also affect multilingual models. Paper investigates cross-lingual backdoor attacks against multilingual LLMs. This involves poisoning the instruction-tuning data in one or two languages, which can then activate malicious outputs in languages whose instruction-tuning data was not poisoned. This method has been shown to have a high attack success rate in various scenarios, even after paraphrasing, and can work across 25 languages."
-    image: ["https://github.com/llmsresearch/research_paper_analysis_db/images/30th-april-2024/transferring-troubles.png"]
+    image: ["https://raw.githubusercontent.com/llmsresearch/research_paper_analysis_db/main/images/30th-april-2024/transferring-troubles.png"]
