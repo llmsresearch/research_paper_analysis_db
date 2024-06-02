@@ -108,13 +108,22 @@
 
         function createTimeline(papers) {
             const timeline = document.querySelector('.timeline');
+            let currentDate = null;
+
+            // Sort papers by date in descending order
+            papers.sort((a, b) => new Date(b.date.split(' ').reverse().join(' ')) - new Date(a.date.split(' ').reverse().join(' '))).reverse();
+
             papers.forEach((paper, index) => {
                 const container = document.createElement('div');
                 container.className = 'container';
 
-                const date = document.createElement('div');
-                date.className = 'date';
-                date.textContent = paper.date;
+                if (paper.date !== currentDate) {
+                    currentDate = paper.date;
+                    const date = document.createElement('div');
+                    date.className = 'date';
+                    date.textContent = paper.date;
+                    container.appendChild(date);
+                }
 
                 const content = document.createElement('div');
                 content.className = 'content';
@@ -136,14 +145,13 @@
                 details.className = 'details';
                 details.id = `details${index}`;
                 details.innerHTML = `<p>${paper.details}</p>` + 
-                                    (paper.image && paper.image.length > 0 ? paper.image.map(img => `<img src="${img}">`).join('') : '');
+                                    (paper.image && paper.image.length > 0 ? paper.image.map(img => `<img src="${img}" alt="Image for ${paper.title}">`).join('') : '');
 
                 content.appendChild(title);
                 content.appendChild(description);
                 content.appendChild(toggleButton);
                 content.appendChild(details);
 
-                container.appendChild(date);
                 container.appendChild(content);
 
                 timeline.appendChild(container);
